@@ -1,4 +1,6 @@
 package org.example;
+import org.example.Operacoes;
+
 
 import java.util.Scanner;
 
@@ -8,6 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //Criando instancias...
         Scanner scanner = new Scanner(System.in);
 
         Double a = scanner.nextDouble();
@@ -15,24 +18,22 @@ public class Main {
         Double b = scanner.nextDouble();
 
         scanner.close();
-
-        //Criando instancia para a classe Operacoes.
         Operacoes operacoes = new Operacoes();
 
         double resultado;
 
         switch (operador) {
             case "+":
-                resultado = a + b;
+                resultado = operacoes.soma(a,b);
                 break;
             case "-":
-                resultado = a - b;
+                resultado = operacoes.subtrair(a,b);
                 break;
             case "*":
-                resultado = a * b;
+                resultado = operacoes.multiplicar(a,b);
                 break;
             case "/":
-                resultado = a / b;
+                resultado = operacoes.dividir(a,b);
             default:
                 resultado  = 0;
                 break;
